@@ -1,0 +1,326 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="StateMachine" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="834,701" sap2010:WorkflowViewState.IdRef="StateMachine_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" DisplayName="StateMachine" sap:VirtualizedContainerService.HintSize="642,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">0,2.5</av:Point>
+        <x:Double x:Key="StateContainerWidth">608</x:Double>
+        <x:Double x:Key="StateContainerHeight">600</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">60,40 120,40</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <State x:Name="__ReferenceID0" DisplayName="Read State" sap:VirtualizedContainerService.HintSize="196,111" sap2010:WorkflowViewState.IdRef="State_1">
+      <State.Entry>
+        <Sequence sap:VirtualizedContainerService.HintSize="653,867" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If Condition="[Percentage_Counter.Equals(1)]" sap:VirtualizedContainerService.HintSize="611,235" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt1]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Data1" WorkbookPath="[Config(&quot;ExcelInput&quot;).ToString]" />
+            </If.Then>
+          </If>
+          <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[Count+1]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[Percentage_Counter]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[Percentage_Counter+1]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If Condition="[Count&lt;=dt1.Rows.Count]" sap:VirtualizedContainerService.HintSize="611,300" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataRow">[Transation_Item]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataRow">[dt1.Rows(Count-1)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataRow">[Transation_Item]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataRow">[Nothing]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Else>
+          </If>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">412,94.5</av:Point>
+          <av:Size x:Key="ShapeSize">196,111</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Double x:Key="StateContainerWidth">162</x:Double>
+          <x:Double x:Key="StateContainerHeight">75.079999999999984</x:Double>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="450,537" sap2010:WorkflowViewState.IdRef="Transition_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">519.8,205.5 519.8,335.8 251,335.8</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">40</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Transation_Item isnot Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID1" DisplayName="Process State" sap:VirtualizedContainerService.HintSize="182,116" sap2010:WorkflowViewState.IdRef="State_2">
+              <State.Entry>
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Process State Machine workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process State Machine.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
+                      <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="Transation_Item" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Percentage_Counter">
+                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Percentage_Counter" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                    </InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">69,272</av:Point>
+                  <av:Size x:Key="ShapeSize">182,116</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Double x:Key="StateContainerWidth">148</x:Double>
+                  <x:Double x:Key="StateContainerHeight">80.080000000000041</x:Double>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="T2" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Transition_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">169.1,272 169.1,144.45 412,144.45</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">42</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">33</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemException is Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+                  </Transition.Condition>
+                </Transition>
+              </State.Transitions>
+            </State>
+          </Transition.To>
+        </Transition>
+        <Transition DisplayName="T3" sap:VirtualizedContainerService.HintSize="450,537" sap2010:WorkflowViewState.IdRef="Transition_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">519.8,205.5 519.8,235.5 90.1,235.5 90.1,150.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">51</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Transation_Item is Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID2" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_7" IsFinal="True">
+              <State.Entry>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;exit&quot;]" />
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">3,89.5</av:Point>
+                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </State>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <State x:Name="__ReferenceID3" DisplayName="Read ConfigState" sap:VirtualizedContainerService.HintSize="742,1353" sap2010:WorkflowViewState.IdRef="State_8">
+      <State.Entry>
+        <Sequence sap:VirtualizedContainerService.HintSize="696,993" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="654,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[Config]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[New Dictionary( of String, Object)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="654,801" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Config_Sheets]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="sheets" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="618,667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[ConfigDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="[sheets.ToString]" WorkbookPath="Data\Config.xlsx" />
+                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ConfigDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="576,448" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,300" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[Not String.IsNullOrWhiteSpace(row(&quot;Name&quot;).ToString.Trim)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_3">
+                            <If.Then>
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[Config(row("Name").ToString)]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[row("Value")]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Then>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">120,9.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T4" sap2010:WorkflowViewState.IdRef="Transition_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+              <av:PointCollection x:Key="ConnectorLocation">254,40 510,40 510,94.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <StateMachine.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="Count">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataRow" Name="Transation_Item" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt1" />
+      <Variable x:TypeArguments="s:SystemException" Name="SystemException" />
+      <Variable x:TypeArguments="x:Int32" Name="Percentage_Counter">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ConfigDT" />
+      <Variable x:TypeArguments="s:String[]" Name="Config_Sheets">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;,&quot;Constants&quot;}" />
+        </Variable.Default>
+      </Variable>
+    </StateMachine.Variables>
+  </StateMachine>
+</Activity>
